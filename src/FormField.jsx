@@ -1,10 +1,11 @@
 import React from "react";
+import classNames from "classnames";
 import { Box } from "@mui/material";
 
-const FormField = (props) => {
+const FormField = ({ className, ...rest }) => {
   return (
-    <Box className={"GrtFormField"} {...props}>
-      {props.children}
+    <Box className={classNames("GrtFormField", className)} {...rest}>
+      {rest.children}
     </Box>
   );
 };

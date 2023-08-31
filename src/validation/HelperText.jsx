@@ -4,8 +4,8 @@ import { Typography } from "@mui/material";
 import { useFormikContext } from "formik";
 import { useValidation } from "./lib";
 
-const TCHelperText = (props) => {
-  const { name, helperText, children } = props;
+const HelperText = (props) => {
+  const { name, helperText } = props;
   const formik = useFormikContext();
   const { hasError } = useValidation();
 
@@ -25,10 +25,11 @@ const TCHelperText = (props) => {
     );
   }
 
-  return "";
+  return undefined;
 };
 
-TCHelperText.propTypes = {
+HelperText.propTypes = {
   name: PropTypes.string.isRequired,
+  helperText: PropTypes.string,
 };
-export default TCHelperText;
+export default HelperText;

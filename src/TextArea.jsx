@@ -9,7 +9,7 @@ import Label from "./Label";
 import FormField from "./FormField";
 import { useValidation } from "./validation/lib";
 
-function Text(props) {
+function TextArea(props) {
   const {
     name,
     label,
@@ -18,8 +18,6 @@ function Text(props) {
     helperText,
     className,
     color = "primary",
-    min,
-    max,
     ...rest
   } = props;
 
@@ -42,10 +40,11 @@ function Text(props) {
       <MuiTextField
         id={`${id}-input`}
         name={name}
+        autoComplete={"off"}
         value={formik.values[name]}
         error={hasError(name)}
         onChange={formik.handleChange}
-        className={classNames(`GrtFormText-${name}`)}
+        className={classNames(`GrtFormTextArea-${name}`)}
         variant={"standard"}
         fullWidth
         helperText={<HelperText {...props} />}
@@ -58,13 +57,15 @@ function Text(props) {
           sx: typography.input,
           endAdornment: <InputEndAdornment {...props} />,
         }}
+        rows={5}
         {...rest}
+        multiline
       />
     </FormField>
   );
 }
 
-Text.propTypes = {
+TextArea.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   id: PropTypes.string,
@@ -75,6 +76,7 @@ Text.propTypes = {
   color: PropTypes.string,
   min: PropTypes.string,
   max: PropTypes.string,
+  rows: PropTypes.number,
 };
 
-export default Text;
+export default TextArea;

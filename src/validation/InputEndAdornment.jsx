@@ -1,23 +1,21 @@
 import React from "react";
-import FormikInput from "@tink/inputs/FormikInput";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import { fieldHasError } from "@forms/formValidation";
-import { useFormikContext } from "formik";
+import { useValidation } from "./lib";
+import PropTypes from "prop-types";
 
-const InputEndAdornment = ({ name }) => {
-  const formik = useFormikContext();
+const InputEndAdornment = ({ name, InputEndAdornment }) => {
+  const { hasError } = useValidation();
 
-  if (fieldHasError(formik, name)) {
-    return (
-      <CancelRoundedIcon color={"error"} />
-    );
+  if (hasError(name)) {
+    return <CancelRoundedIcon color={"error"} />;
   }
 
-  return undefined;
+  return InputEndAdornment;
 };
 
 InputEndAdornment.propTypes = {
-  ...FormikInput.propTypes,
+  name: PropTypes.string.isRequired,
+  InputEndAdornment: PropTypes.node,
 };
 
 export default InputEndAdornment;

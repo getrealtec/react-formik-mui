@@ -1,10 +1,10 @@
 import _ from "lodash";
 import { useFormikContext } from "formik";
 
-const defaultPhoneMask = "(999) 999 - 9999";
-const defaultEmailPattern =
+export const defaultPhoneMask = "(999) 999 - 9999";
+export const defaultEmailPattern =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-const defaultPhonePattern = /^\(\d{3}\)\s\d{3}\s-\s\d{4}/;
+export const defaultPhonePattern = /^\(\d{3}\)\s\d{3}\s-\s\d{4}/;
 
 /**
  * Adds an isRequired error associated to the given field in the error container
@@ -58,6 +58,18 @@ const hasError = (errors) => (name) => {
 
 const getError = (errors) => (name) => {
   return _.get(errors, name, "");
+};
+
+export const arrayToggle = (array, item, replace = false) => {
+  if (replace) {
+    return [item];
+  } else if (array.includes(item)) {
+    array = array.filter((listItem) => listItem != item);
+  } else {
+    array.push(item);
+  }
+
+  return array;
 };
 
 export const useValidation = () => {

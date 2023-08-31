@@ -1,18 +1,19 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import FormikInput from "@tink/inputs/FormikInput";
-import { fieldHasError } from "@forms/formValidation";
-import { useFormikContext } from "formik";
+import PropTypes from "prop-types";
+import { Typography, useTheme } from "@mui/material";
+import { useValidation } from "./validation/lib";
 
-const Label = ({ name, children, ...rest }) => {
-  const formik = useFormikContext();
-  const color = fieldHasError(formik, name) ? "error.main" : "text.highlighted";
+const Label = ({ name, color, children, ...rest }) => {
+  const { hasError } = useValidation();
+  const { typography } = useTheme();
+  const sxColor = hasError(name) ? "error.main" : `${color}.main`;
+  const defaultTypography = typography?.formLabel || {};
 
   return (
     <Typography
-      className={"GrtLabel"}
-      sx={{ color }}
+      className={"GrtFormLabel"}
       {...rest}
+      sx={{ color: sxColor, ...defaultTypography }}
     >
       {children}
     </Typography>
@@ -20,7 +21,8 @@ const Label = ({ name, children, ...rest }) => {
 };
 
 Label.propTypes = {
-  ...FormikInput.propTypes,
+  name: PropTypes.string.isRequired,
+  color: PropTypes.string,
 };
 
 export default Label;
