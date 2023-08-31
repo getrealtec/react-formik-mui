@@ -13,11 +13,11 @@ import { arrayToggle, useValidation } from "./validation/lib";
 import HelperText from "./validation/HelperText";
 import Label from "./Label";
 import { useFormikContext } from "formik";
+import styles from "./Input.module.scss";
 
 const Checkboxes = (props) => {
   const {
     id,
-    onChange,
     label,
     name,
     options,
@@ -46,8 +46,9 @@ const Checkboxes = (props) => {
       <FormGroup
         className={classNames(
           "GrtInputCheckboxes",
-          className,
           isHorizontal && "GrtInlineInput",
+          isHorizontal && styles.GrtInlineInput,
+          className,
         )}
         aria-labelledby={`${id}-label`}
       >
@@ -77,7 +78,6 @@ const Checkboxes = (props) => {
 };
 
 Checkboxes.propTypes = {
-  onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
   value: PropTypes.array,
