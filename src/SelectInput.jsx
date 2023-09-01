@@ -47,7 +47,7 @@ const SelectInput = (props) => {
       <FormControl
         variant="standard"
         fullWidth
-        className={`TinkFormSelect-${name}`}
+        className={`GrtFormSelect-${name}`}
         error={hasError(name)}
       >
         {label && (

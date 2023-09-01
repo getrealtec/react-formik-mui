@@ -1,5 +1,5 @@
 {
-  "name": "react-formik-mui",
+  "name": "@getrealtec/react-formik-mui",
   "version": "1.0.0",
   "description": "Links the library React Formik with React MUI",
   "main": "index.js",
@@ -34,5 +34,6 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-input-mask": "^2.0.4"
-  }
+  },
+  "devDependencies": {}
 }

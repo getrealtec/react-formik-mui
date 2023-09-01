@@ -3,10 +3,15 @@ import PropTypes from "prop-types";
 import { isArray } from "lodash";
 import { Box, Chip, Typography } from "@mui/material";
 import classNames from "classnames";
-import styles from "@tink-inputs/Input.module.scss";
+import styles from "./Input.module.scss";
 
 const SelectInputChips = (props) => {
-  const { onClick, value = [], options = [], showSelectionsLabel = null } = props;
+  const {
+    onClick,
+    value = [],
+    options = [],
+    showSelectionsLabel = null,
+  } = props;
 
   if (!showSelectionsLabel) {
     return;
@@ -17,23 +22,29 @@ const SelectInputChips = (props) => {
   }
 
   return (
-    <Box className={classNames("TinkFormSelectChips", styles.TinkFormSelectChips)}>
+    <Box
+      className={classNames("GrtFormSelectChips", styles.GrtFormSelectChips)}
+    >
       <Typography
         variant={"body1"}
         paragraph
-        className={classNames("TinkFormSelectChipsLabel", styles.TinkFormSelectChipsLabel)}
+        className={classNames(
+          "GrtFormSelectChipsLabel",
+          styles.GrtFormSelectChipsLabel,
+        )}
       >
         {showSelectionsLabel}
       </Typography>
       <Box>
-        {isArray(value) && value.map((selection) => (
-          <Chip
-            key={selection}
-            onClick={onClick({ value: selection })}
-            onDelete={onClick({ value: selection })}
-            label={chipLabel(selection)}
-          />
-        ))}
+        {isArray(value) &&
+          value.map((selection) => (
+            <Chip
+              key={selection}
+              onClick={onClick({ value: selection })}
+              onDelete={onClick({ value: selection })}
+              label={chipLabel(selection)}
+            />
+          ))}
       </Box>
     </Box>
   );
