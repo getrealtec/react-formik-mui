@@ -9,8 +9,8 @@ import {
   FormGroup,
   FormHelperText,
 } from "@mui/material";
-import { arrayToggle, useValidation } from "./validation/lib";
-import HelperText from "./validation/HelperText";
+import { arrayToggle, useValidation } from "./lib";
+import HelperText from "./HelperText";
 import Label from "./Label";
 import { useFormikContext } from "formik";
 import styles from "./Input.module.scss";

@@ -7,8 +7,8 @@ import {
   FormControl,
   FormHelperText,
 } from "@mui/material";
-import { useValidation } from "./validation/lib";
-import HelperText from "./validation/HelperText";
+import { useValidation } from "./lib";
+import HelperText from "./HelperText";
 import FormField from "./FormField";
 import Label from "./Label";
 

@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { useFormikContext } from "formik";
 import { TextField as MuiTextField, useTheme } from "@mui/material";
-import InputEndAdornment from "./validation/InputEndAdornment";
-import HelperText from "./validation/HelperText";
+import InputEndAdornment from "./InputEndAdornment";
+import HelperText from "./HelperText";
 import Label from "./Label";
 import FormField from "./FormField";
-import { useValidation } from "./validation/lib";
+import { useValidation } from "./lib";
 
-function Text(props) {
+const Text = (props) => {
   const {
     name,
     label,
@@ -62,7 +62,7 @@ function Text(props) {
       />
     </FormField>
   );
-}
+};
 
 Text.propTypes = {
   name: PropTypes.string.isRequired,

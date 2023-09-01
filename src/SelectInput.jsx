@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import SelectInputChips from "./SelectInputChips";
-import HelperText from "./validation/HelperText";
-import { arrayToggle, useValidation } from "./validation/lib";
+import HelperText from "./HelperText";
+import { arrayToggle, useValidation } from "./lib";
 import FormField from "./FormField";
 import Label from "./Label";
 

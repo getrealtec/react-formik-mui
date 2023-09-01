@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import Label from "./Label";
-import { useValidation } from "./validation/lib";
+import { useValidation } from "./lib";
 import FormField from "./FormField";
 import styles from "./Input.module.scss";
 
