@@ -89,7 +89,6 @@ Checkboxes.propTypes = {
     }),
   ),
   isHorizontal: PropTypes.bool,
-  hasErrors: PropTypes.bool,
   color: PropTypes.string,
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { useFormikContext } from "formik";
 import {
   Checkbox,
@@ -15,6 +14,7 @@ import Label from "./Label";
 
 const Consent = (props) => {
   const {
+    id,
     name,
     label,
     ariaLabel,
@@ -27,25 +27,30 @@ const Consent = (props) => {
 
   const formik = useFormikContext();
   const { hasError } = useValidation();
-  const colorSx = { color: hasError ? "error.main" : `${color}.contrastText` };
+  const colorSx = { color: hasError(name) ? "error.main" : `${color}.main` };
+
+  const handleChange = () => {
+    formik.setFieldValue(name, !formik?.values[name]);
+  };
 
   return (
     <FormField className={className}>
-      <FormControl variant={"standard"} error={hasError} color={color}>
+      <FormControl variant={"standard"} error={hasError(name)} color={color}>
         <FormControlLabel
           label={<Label color={color}>{label}</Label>}
           control={
             <Checkbox
+              id={id}
               name={name}
-              checked={formik.values[name]}
-              onChange={formik.handleChange}
+              required={required}
+              checked={!!formik.values[name]}
+              onChange={handleChange}
               color={color}
               sx={colorSx}
-              {...rest}
             />
           }
         />
-        {hasError && (
+        {hasError(name) && (
           <FormHelperText>
             <HelperText {...props} />
           </FormHelperText>

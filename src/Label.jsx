@@ -5,15 +5,14 @@ import { useValidation } from "./validation/lib";
 
 const Label = ({ name, color, children, ...rest }) => {
   const { hasError } = useValidation();
-  const { typography } = useTheme();
   const sxColor = hasError(name) ? "error.main" : `${color}.main`;
-  const defaultTypography = typography?.formLabel || {};
 
   return (
     <Typography
       className={"GrtFormLabel"}
       {...rest}
-      sx={{ color: sxColor, ...defaultTypography }}
+      variant={"inputLabel"}
+      sx={{ color: sxColor }}
     >
       {children}
     </Typography>

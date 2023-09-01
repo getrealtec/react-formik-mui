@@ -85,8 +85,7 @@ Radio.propTypes = {
     }),
   ),
   isHorizontal: PropTypes.bool,
-  hasErrors: PropTypes.bool,
-  color: PropTypes.oneOf(ThemeColors),
+  color: PropTypes.string,
 };
 
 export default Radio;

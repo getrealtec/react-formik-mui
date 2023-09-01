@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isArray } from "lodash";
+import { useFormikContext } from "formik";
 import {
   FormControl,
   FormHelperText,
@@ -9,13 +10,12 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import FieldLabel from "@forms/FieldLabel";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import FormField from "@forms/FormField";
 import SelectInputChips from "./SelectInputChips";
 import HelperText from "./validation/HelperText";
 import { arrayToggle, useValidation } from "./validation/lib";
-import { useFormikContext } from "formik";
+import FormField from "./FormField";
+import Label from "./Label";
 
 const SelectInput = (props) => {
   const {
@@ -33,6 +33,7 @@ const SelectInput = (props) => {
   const formik = useFormikContext();
   const { hasError } = useValidation();
   const value = formik.values[name];
+
   const isSelected = (option) => {
     return isArray(value) ? value.includes(option) : value == option;
   };
@@ -51,7 +52,7 @@ const SelectInput = (props) => {
       >
         {label && (
           <FormLabel id={`${id}-label`} aria-label={ariaLabel}>
-            <FieldLabel name={name}>{label}</FieldLabel>
+            <Label name={name}>{label}</Label>
           </FormLabel>
         )}
         <Select
