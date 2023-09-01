@@ -6,7 +6,7 @@ import InputEndAdornment from "./validation/InputEndAdornment";
 import HelperText from "./validation/HelperText";
 import Label from "./Label";
 import FormField from "./FormField";
-import { useValidation } from "./lib";
+import { useValidation } from "./validation/lib";
 
 function Text(props) {
   const {
@@ -62,18 +62,5 @@ function Text(props) {
     </FormField>
   );
 }
-
-Text.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  ariaLabel: PropTypes.string,
-  helperText: PropTypes.string,
-  typography: PropTypes.object,
-  className: PropTypes.string,
-  color: PropTypes.string,
-  min: PropTypes.string,
-  max: PropTypes.string,
-};
 
 export default Text;

@@ -72,7 +72,7 @@ export const arrayToggle = (array, item, replace = false) => {
   return array;
 };
 
-export const useValidation = () => {
+export function useValidation() {
   const formik = useFormikContext();
 
   return {
@@ -82,4 +82,4 @@ export const useValidation = () => {
     hasError: hasError(formik?.errors || {}),
     getError: getError(formik?.errors || {}),
   };
-};
+}

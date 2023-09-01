@@ -6,7 +6,7 @@ import Label from "./Label";
 import HelperText from "./validation/HelperText";
 import InputEndAdornment from "./validation/InputEndAdornment";
 import FormField from "./FormField";
-import { defaultPhoneMask, useValidation } from "./lib";
+import { defaultPhoneMask, useValidation } from "./validation/lib";
 
 const Phone = (props) => {
   const {
@@ -66,17 +66,6 @@ const Phone = (props) => {
       </InputMask>
     </FormField>
   );
-};
-
-Phone.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  ariaLabel: PropTypes.string,
-  helperText: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.string,
-  mask: PropTypes.string,
 };
 
 export default Phone;

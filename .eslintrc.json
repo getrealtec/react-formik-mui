@@ -48,7 +48,6 @@
     "block-spacing": 2,
     "template-curly-spacing": 2,
     "object-curly-spacing": [
-      2,
       "always"
     ],
     "switch-colon-spacing": 2,

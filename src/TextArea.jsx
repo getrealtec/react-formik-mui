@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import classNames from "classnames";
 import { useFormikContext } from "formik";
 import { TextField as MuiTextField, useTheme } from "@mui/material";
@@ -7,7 +6,7 @@ import InputEndAdornment from "./validation/InputEndAdornment";
 import HelperText from "./validation/HelperText";
 import Label from "./Label";
 import FormField from "./FormField";
-import { useValidation } from "./validation/lib";
+import { useValidation } from "./lib";
 
 function TextArea(props) {
   const {

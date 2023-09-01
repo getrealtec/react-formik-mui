@@ -12,7 +12,7 @@ import {
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import SelectInputChips from "./SelectInputChips";
 import HelperText from "./validation/HelperText";
-import { arrayToggle, useValidation } from "./lib";
+import { arrayToggle, useValidation } from "./validation/lib";
 import FormField from "./FormField";
 import Label from "./Label";
 
@@ -94,15 +94,6 @@ const SelectInput = (props) => {
       />
     </FormField>
   );
-};
-
-SelectInput.propTypes = {
-  options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  placeholder: PropTypes.string,
-  multiple: PropTypes.bool,
 };
 
 export default SelectInput;

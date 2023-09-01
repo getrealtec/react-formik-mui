@@ -6,9 +6,9 @@ import InputEndAdornment from "./validation/InputEndAdornment";
 import HelperText from "./validation/HelperText";
 import Label from "./Label";
 import FormField from "./FormField";
-import { useValidation } from "./lib";
+import { useValidation } from "./validation/lib";
 
-function Text(props) {
+function TextArea(props) {
   const {
     name,
     label,
@@ -17,8 +17,6 @@ function Text(props) {
     helperText,
     className,
     color = "primary",
-    min,
-    max,
     ...rest
   } = props;
 
@@ -41,10 +39,11 @@ function Text(props) {
       <MuiTextField
         id={`${id}-input`}
         name={name}
+        autoComplete={"off"}
         value={formik.values[name]}
         error={hasError(name)}
         onChange={formik.handleChange}
-        className={classNames(`GrtFormText-${name}`)}
+        className={classNames(`GrtFormTextArea-${name}`)}
         variant={"standard"}
         fullWidth
         helperText={<HelperText {...props} />}
@@ -57,23 +56,12 @@ function Text(props) {
           sx: typography.input,
           endAdornment: <InputEndAdornment {...props} />,
         }}
+        rows={5}
         {...rest}
+        multiline
       />
     </FormField>
   );
 }
 
-Text.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  ariaLabel: PropTypes.string,
-  helperText: PropTypes.string,
-  typography: PropTypes.object,
-  className: PropTypes.string,
-  color: PropTypes.string,
-  min: PropTypes.string,
-  max: PropTypes.string,
-};
-
-export default Text;
+export default TextArea;

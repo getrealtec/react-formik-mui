@@ -3,7 +3,30 @@ import { Typography } from "@mui/material";
 import { useFormikContext } from "formik";
 import { useValidation } from "../lib";
 
-const HelperText = (props) => {
+declare module "@mui/material/styles" {
+  interface TypographyVariants {
+    helperText: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    helperText?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    helperText: true;
+  }
+}
+
+export interface HelperTextProps {
+  name: string;
+  helperText?: string;
+}
+
+const HelperText = (props: HelperTextProps) => {
   const { name, helperText } = props;
   const formik = useFormikContext();
   const { hasError } = useValidation();
@@ -27,8 +50,4 @@ const HelperText = (props) => {
   return undefined;
 };
 
-HelperText.propTypes = {
-  name: PropTypes.string.isRequired,
-  helperText: PropTypes.string,
-};
 export default HelperText;

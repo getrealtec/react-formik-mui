@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import Label from "./Label";
-import { useValidation } from "./lib";
+import { useValidation } from "./validation/lib";
 import FormField from "./FormField";
 import styles from "./Input.module.scss";
 
@@ -70,21 +70,6 @@ const Radio = (props) => {
       </FormControl>
     </FormField>
   );
-};
-
-Radio.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  value: PropTypes.string,
-  label: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.node,
-    }),
-  ),
-  isHorizontal: PropTypes.bool,
-  color: PropTypes.string,
 };
 
 export default Radio;

@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import classNames from "classnames";
 import {
   Checkbox,
@@ -9,7 +8,7 @@ import {
   FormGroup,
   FormHelperText,
 } from "@mui/material";
-import { arrayToggle, useValidation } from "./validation/lib";
+import { arrayToggle, useValidation } from "./lib";
 import HelperText from "./validation/HelperText";
 import Label from "./Label";
 import { useFormikContext } from "formik";

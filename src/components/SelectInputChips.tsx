@@ -49,11 +49,4 @@ const SelectInputChips = (props) => {
   );
 };
 
-SelectInputChips.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  value: PropTypes.array,
-  options: PropTypes.array,
-  showSelectionsLabel: PropTypes.node,
-};
-
 export default SelectInputChips;

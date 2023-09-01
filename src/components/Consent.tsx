@@ -1,18 +1,42 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import { useFormikContext } from "formik";
+import { useFormikContext, FormikContextType } from "formik";
 import {
   Checkbox,
   FormControlLabel,
   FormControl,
   FormHelperText,
 } from "@mui/material";
-import { useValidation } from "./validation/lib";
-import HelperText from "./validation/HelperText";
+import { useValidation } from "../lib";
+import HelperText from "./HelperText";
 import FormField from "./FormField";
 import Label from "./Label";
+import { OverridableStringUnion } from "@mui/types";
+import { CheckboxPropsColorOverrides } from "@mui/material/Checkbox/Checkbox";
 
-const Consent = (props) => {
+export interface ConsentProps {
+  id: string;
+  name: string;
+  label: string;
+  required: boolean;
+  ariaLabel: string;
+  helperText: string;
+  typography: object;
+  className: string;
+  color?: OverridableStringUnion<
+    | "primary"
+    | "secondary"
+    | "error"
+    | "info"
+    | "success"
+    | "warning"
+    | "default",
+    CheckboxPropsColorOverrides
+  >;
+
+  [key: string]: any;
+}
+
+const Consent = (props: ConsentProps) => {
   const {
     id,
     name,
@@ -21,6 +45,7 @@ const Consent = (props) => {
     typography = "body1",
     helperText,
     className,
+    required,
     color = "primary",
     ...rest
   } = props;
@@ -30,20 +55,24 @@ const Consent = (props) => {
   const colorSx = { color: hasError(name) ? "error.main" : `${color}.main` };
 
   const handleChange = () => {
-    formik.setFieldValue(name, !formik?.values[name]);
+    formik.setFieldValue(name, !values[name]);
   };
 
   return (
     <FormField className={className}>
-      <FormControl variant={"standard"} error={hasError(name)} color={color}>
+      <FormControl variant={"standard"} error={hasError(name)}>
         <FormControlLabel
-          label={<Label color={color}>{label}</Label>}
+          label={
+            <Label name={name} color={color}>
+              {label}
+            </Label>
+          }
           control={
             <Checkbox
               id={id}
               name={name}
               required={required}
-              checked={!!formik.values[name]}
+              checked={!!values[name]}
               onChange={handleChange}
               color={color}
               sx={colorSx}
@@ -58,15 +87,6 @@ const Consent = (props) => {
       </FormControl>
     </FormField>
   );
-};
-
-Consent.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  ariaLabel: PropTypes.string,
-  helperText: PropTypes.string,
-  typography: PropTypes.object,
-  className: PropTypes.string,
 };
 
 export default Consent;
