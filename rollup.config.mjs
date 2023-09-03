@@ -11,7 +11,7 @@ export default {
   output: [
     {
       // This is an easy way to keep your `main` in sync between rollup & the package
-      file: "./dist/bundle.js",
+      file: "./index.js",
       format: "cjs",
       sourcemap: true,
     },

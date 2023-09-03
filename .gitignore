@@ -15,7 +15,7 @@ jspm_packages/
 package-lock.json
 
 # Distribution directories
-
+dist/
 
 # Typescript v1 declaration files
 typings/

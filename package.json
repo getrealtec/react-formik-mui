@@ -4,7 +4,8 @@
   "description": "Links the library React Formik with React MUI",
   "main": "src/index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "rollup -c rollup.config.mjs -w"
   },
   "repository": {
     "type": "git",
