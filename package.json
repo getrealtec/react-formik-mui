@@ -1,6 +1,6 @@
 {
   "name": "@getrealtec/react-formik-mui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Links the library React Formik with React MUI",
   "main": "src/index.js",
   "scripts": {
