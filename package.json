@@ -24,30 +24,42 @@
     "url": "https://github.com/getrealtec/react-formik-mui/issues"
   },
   "homepage": "https://github.com/getrealtec/react-formik-mui#readme",
-  "dependencies": {
-    "@babel/preset-react": "^7.22.5",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.7",
-    "classnames": "^2.3.2",
-    "formik": "^2.4.3",
-    "lodash": "^4.17.21",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-input-mask": "^2.0.4",
-    "react-jsx": "^1.0.0",
-    "sass": "^1.66.1"
-  },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.7",
+    "autoprefixer": "^10.4.15",
     "classnames": "^2.3.2",
     "formik": "^2.4.3",
     "lodash": "^4.17.21",
+    "node-sass": "^9.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-input-mask": "^2.0.4",
-    "sass": "^1.66.1"
+    "react-jsx": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.14",
+    "@babel/preset-react": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "rollup": "^3.28.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-replace": "^2.2.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.7",
+    "autoprefixer": "^10.4.15",
+    "classnames": "^2.3.2",
+    "formik": "^2.4.3",
+    "lodash": "^4.17.21",
+    "node-sass": "^9.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-input-mask": "^2.0.4",
+    "react-jsx": "^1.0.0"
   }
 }

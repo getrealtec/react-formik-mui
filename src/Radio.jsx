@@ -10,9 +10,9 @@ import {
   RadioGroup,
   Typography,
 } from "@mui/material";
-import Label from "./Label";
-import { useValidation } from "./lib";
-import FormField from "./FormField";
+import Label from "./Label.jsx";
+import { useValidation } from "./lib.js";
+import FormField from "./FormField.jsx";
 import styles from "./Input.module.scss";
 
 const Radio = (props) => {

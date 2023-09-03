@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import InputMask from "react-input-mask";
 import { useFormikContext } from "formik";
 import { TextField, useTheme } from "@mui/material";
-import Label from "./Label";
-import HelperText from "./HelperText";
-import InputEndAdornment from "./InputEndAdornment";
-import FormField from "./FormField";
-import { defaultPhoneMask, useValidation } from "./lib";
+import Label from "./Label.jsx";
+import HelperText from "./HelperText.jsx";
+import InputEndAdornment from "./InputEndAdornment.jsx";
+import FormField from "./FormField.jsx";
+import { defaultPhoneMask, useValidation } from "./lib.js";
 
 const Phone = (props) => {
   const {

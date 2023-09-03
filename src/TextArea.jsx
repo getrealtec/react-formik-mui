@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { useFormikContext } from "formik";
 import { TextField as MuiTextField, useTheme } from "@mui/material";
-import InputEndAdornment from "./InputEndAdornment";
-import HelperText from "./HelperText";
-import Label from "./Label";
-import FormField from "./FormField";
-import { useValidation } from "./lib";
+import InputEndAdornment from "./InputEndAdornment.jsx";
+import HelperText from "./HelperText.jsx";
+import Label from "./Label.jsx";
+import FormField from "./FormField.jsx";
+import { useValidation } from "./lib.js";
 
 function TextArea(props) {
   const {

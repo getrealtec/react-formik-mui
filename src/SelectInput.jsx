@@ -11,11 +11,11 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import SelectInputChips from "./SelectInputChips";
-import HelperText from "./HelperText";
-import { arrayToggle, useValidation } from "./lib";
-import FormField from "./FormField";
-import Label from "./Label";
+import SelectInputChips from "./SelectInputChips.jsx";
+import HelperText from "./HelperText.jsx";
+import { arrayToggle, useValidation } from "./lib.js";
+import FormField from "./FormField.jsx";
+import Label from "./Label.jsx";
 
 const SelectInput = (props) => {
   const {

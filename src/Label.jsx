@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Typography, useTheme } from "@mui/material";
-import { useValidation } from "./lib";
+import { useValidation } from "./lib.js";
 
 const Label = ({ name, color, children, ...rest }) => {
   const { hasError } = useValidation();

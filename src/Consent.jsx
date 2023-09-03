@@ -7,10 +7,10 @@ import {
   FormControl,
   FormHelperText,
 } from "@mui/material";
-import { useValidation } from "./lib";
-import HelperText from "./HelperText";
-import FormField from "./FormField";
-import Label from "./Label";
+import { useValidation } from "./lib.js";
+import HelperText from "./HelperText.jsx";
+import FormField from "./FormField.jsx";
+import Label from "./Label.jsx";
 
 const Consent = (props) => {
   const {

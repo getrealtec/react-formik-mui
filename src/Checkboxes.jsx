@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import { useFormikContext } from "formik";
 import {
   Checkbox,
   FormControlLabel,
@@ -9,10 +10,9 @@ import {
   FormGroup,
   FormHelperText,
 } from "@mui/material";
-import { arrayToggle, useValidation } from "./lib";
-import HelperText from "./HelperText";
-import Label from "./Label";
-import { useFormikContext } from "formik";
+import { arrayToggle, useValidation } from "./lib.js";
+import HelperText from "./HelperText.jsx";
+import Label from "./Label.jsx";
 import styles from "./Input.module.scss";
 
 const Checkboxes = (props) => {

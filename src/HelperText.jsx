@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
 import { useFormikContext } from "formik";
-import { useValidation } from "./lib";
+import { useValidation } from "./lib.js";
 
 const HelperText = (props) => {
   const { name, helperText } = props;

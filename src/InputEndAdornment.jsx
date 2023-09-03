@@ -1,6 +1,6 @@
 import React from "react";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import { useValidation } from "./lib";
+import { useValidation } from "./lib.js";
 import PropTypes from "prop-types";
 
 const InputEndAdornment = ({ name, InputEndAdornment }) => {
