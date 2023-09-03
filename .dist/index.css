@@ -1,0 +1,14 @@
+.GrtInlineInput {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem 0; }
+
+.GrtFormSelectChipsLabel {
+  margin: 1rem 0; }
+
+.GrtFormSelectChips > div {
+  display: flex;
+  gap: 0.25rem; }
+
+/*# sourceMappingURL=index.css.map */
