@@ -17,12 +17,11 @@ const Consent = (props) => {
     id,
     name,
     label,
+    required,
     ariaLabel,
-    typography = "body1",
     helperText,
     className,
     color = "primary",
-    ...rest
   } = props;
 
   const formik = useFormikContext();
@@ -37,12 +36,14 @@ const Consent = (props) => {
     <FormField className={className}>
       <FormControl variant={"standard"} error={hasError(name)} color={color}>
         <FormControlLabel
-          label={<Label color={color}>{label}</Label>}
+          label={<Label name={name} color={color}>{label}</Label>}
           control={
             <Checkbox
               id={id}
               name={name}
               required={required}
+              aria-required={required}
+              aria-label={ariaLabel}
               checked={!!formik.values[name]}
               onChange={handleChange}
               color={color}
@@ -52,7 +53,7 @@ const Consent = (props) => {
         />
         {hasError(name) && (
           <FormHelperText>
-            <HelperText {...props} />
+            <HelperText nam={name} helperText={helperText} />
           </FormHelperText>
         )}
       </FormControl>

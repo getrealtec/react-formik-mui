@@ -14,10 +14,13 @@ function TextArea(props) {
     name,
     label,
     id,
+    required,
     ariaLabel,
     helperText,
     className,
     color = "primary",
+    min,
+    max,
     ...rest
   } = props;
 

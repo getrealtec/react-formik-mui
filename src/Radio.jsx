@@ -35,11 +35,16 @@ const Radio = (props) => {
   return (
     <FormField className={className}>
       <FormControl color={color}>
-        <FormLabel id={`${id}-label`} aria-label={ariaLabel}>
-          <Label name={name} color={color}>
-            {label}
-          </Label>
-        </FormLabel>
+        <Label
+          id={`${id}-label`}
+          name={name}
+          htmlFor={`${id}-input`}
+          aria-label={ariaLabel}
+          component={"label"}
+          color={color}
+        >
+          {label}
+        </Label>
         <RadioGroup
           value={formik.values[name]}
           onChange={formik.handleChange}
@@ -75,15 +80,10 @@ const Radio = (props) => {
 
 Radio.propTypes = {
   name: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
   id: PropTypes.string,
   value: PropTypes.string,
   label: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.node,
-    }),
-  ),
   isHorizontal: PropTypes.bool,
   color: PropTypes.string,
 };

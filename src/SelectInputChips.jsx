@@ -18,7 +18,7 @@ const SelectInputChips = (props) => {
   }
 
   function chipLabel(chipValue) {
-    return options.find((option) => option?.value == chipValue)?.label;
+    return options.find((option) => option?.value === chipValue)?.label;
   }
 
   return (

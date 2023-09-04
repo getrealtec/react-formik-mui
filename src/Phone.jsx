@@ -14,11 +14,13 @@ const Phone = (props) => {
     name,
     label,
     id,
+    required,
     ariaLabel,
     helperText,
     className,
     color = "primary",
-    mask,
+    variant = "standard",
+    mask = defaultPhoneMask,
     ...rest
   } = props;
 
@@ -39,7 +41,7 @@ const Phone = (props) => {
         {label}
       </Label>
       <InputMask
-        mask={mask || defaultPhoneMask}
+        mask={mask}
         value={formik.values[name]}
         onChange={formik.handleChange}
       >
@@ -50,10 +52,11 @@ const Phone = (props) => {
             value={formik.values[name]}
             error={hasError(name)}
             className={"GrtFormInput-phone"}
-            variant={"standard"}
             placeholder={mask}
             fullWidth
-            helperText={<HelperText {...props} />}
+            color={color}
+            variant={variant}
+            helperText={<HelperText name={name} helperText={helperText}/>}
             inputProps={{
               "aria-labelledby": `${id}-label`,
             }}

@@ -64,7 +64,7 @@ export const arrayToggle = (array, item, replace = false) => {
   if (replace) {
     return [item];
   } else if (array.includes(item)) {
-    array = array.filter((listItem) => listItem != item);
+    array = array.filter((listItem) => listItem !== item);
   } else {
     array.push(item);
   }

@@ -35,12 +35,15 @@ const SelectInput = (props) => {
   const value = formik.values[name];
 
   const isSelected = (option) => {
-    return isArray(value) ? value.includes(option) : value == option;
+    return isArray(value) ? value.includes(option) : value === option;
   };
 
   const handleChange = (option) => () => {
-    formik.setFieldValue(name, arrayToggle(value, option.value, !multiple));
+    // formik.setFieldValue(name, arrayToggle(value, option.value, !multiple));
   };
+
+  console.log(options);
+  return "";
 
   return (
     <FormField>
@@ -98,8 +101,8 @@ const SelectInput = (props) => {
 };
 
 SelectInput.propTypes = {
-  options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   name: PropTypes.string.isRequired,
+  options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   id: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,

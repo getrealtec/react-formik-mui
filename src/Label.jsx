@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Typography, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useValidation } from "./lib.js";
 
 const Label = ({ name, color, children, ...rest }) => {
@@ -12,7 +12,7 @@ const Label = ({ name, color, children, ...rest }) => {
       className={"GrtFormLabel"}
       {...rest}
       variant={"inputLabel"}
-      sx={{ color: sxColor }}
+      color={sxColor}
     >
       {children}
     </Typography>

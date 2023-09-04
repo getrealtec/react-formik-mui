@@ -32,7 +32,7 @@ const Checkboxes = (props) => {
   const { hasError } = useValidation();
   const _color = hasError(name) ? "error" : color;
   const colorSx = { color: `${_color}.main` };
-  const value = formik.values[name];
+  const value = formik.values[name] || [];
 
   const handleChange = (option) => () => {
     formik.setFieldValue(name, arrayToggle(value, option.value));
@@ -79,15 +79,10 @@ const Checkboxes = (props) => {
 
 Checkboxes.propTypes = {
   name: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
   id: PropTypes.string,
   value: PropTypes.array,
   label: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.node,
-    }),
-  ),
   isHorizontal: PropTypes.bool,
   color: PropTypes.string,
 };

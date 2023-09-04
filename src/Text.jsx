@@ -1,31 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { useFormikContext } from "formik";
-import { TextField as MuiTextField, useTheme } from "@mui/material";
+import {useFormikContext} from "formik";
+import {TextField as MuiTextField, useTheme} from "@mui/material";
 import InputEndAdornment from "./InputEndAdornment.jsx";
 import HelperText from "./HelperText.jsx";
 import Label from "./Label.jsx";
 import FormField from "./FormField.jsx";
-import { useValidation } from "./lib.js";
+import {useValidation} from "./lib.js";
 
 const Text = (props) => {
   const {
     name,
     label,
     id,
+    required,
     ariaLabel,
     helperText,
     className,
     color = "primary",
+    variant = "standard",
     min,
     max,
     ...rest
   } = props;
 
-  const { typography } = useTheme();
+  const {typography, palette} = useTheme();
   const formik = useFormikContext();
-  const { hasError } = useValidation();
+  const {hasError} = useValidation();
 
   return (
     <FormField className={className}>
@@ -46,9 +48,10 @@ const Text = (props) => {
         error={hasError(name)}
         onChange={formik.handleChange}
         className={classNames(`GrtFormText-${name}`)}
-        variant={"standard"}
         fullWidth
-        helperText={<HelperText {...props} />}
+        color={color}
+        variant={variant}
+        helperText={<HelperText name={name} helperText={helperText}/>}
         inputProps={{
           "aria-labelledby": `${id}-label`,
           minLength: min || undefined,
