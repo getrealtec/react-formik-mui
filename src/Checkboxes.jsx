@@ -8,7 +8,7 @@ import {
   FormControl,
   FormLabel,
   FormGroup,
-  FormHelperText,
+  FormHelperText, Typography,
 } from "@mui/material";
 import { arrayToggle, useValidation } from "./lib.js";
 import HelperText from "./HelperText.jsx";
@@ -40,9 +40,16 @@ const Checkboxes = (props) => {
 
   return (
     <FormControl>
-      <FormLabel id={`${id}-label`}>
-        <Label name={name}>{label}</Label>
-      </FormLabel>
+      <Label
+        id={`${id}-label`}
+        name={name}
+        htmlFor={`${id}-input`}
+        aria-label={ariaLabel}
+        component={"label"}
+        color={color}
+      >
+        {label}
+      </Label>
       <FormGroup
         className={classNames(
           "GrtInputCheckboxes",
@@ -55,7 +62,10 @@ const Checkboxes = (props) => {
         {options.map((option) => (
           <FormControlLabel
             key={option.value}
-            label={option.label}
+            label={
+              <Typography color={`${color}.main`}>{option.label}</Typography>
+            }
+            value={option.value}
             control={
               <Checkbox
                 checked={value.includes(option.value)}

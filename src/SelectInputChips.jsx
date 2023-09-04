@@ -52,7 +52,7 @@ const SelectInputChips = (props) => {
 
 SelectInputChips.propTypes = {
   onClick: PropTypes.func.isRequired,
-  value: PropTypes.array,
+  value: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   options: PropTypes.array,
   showSelectionsLabel: PropTypes.node,
 };

@@ -23,27 +23,25 @@ const SelectInput = (props) => {
     name,
     label,
     options,
+    required,
     placeholder = "",
     ariaLabel,
-    required,
+    color = "primary",
     multiple = false,
     showSelectionsLabel = "",
   } = props;
 
   const formik = useFormikContext();
   const { hasError } = useValidation();
-  const value = formik.values[name];
+  const value = formik.values[name] || "";
 
   const isSelected = (option) => {
     return isArray(value) ? value.includes(option) : value === option;
   };
 
   const handleChange = (option) => () => {
-    // formik.setFieldValue(name, arrayToggle(value, option.value, !multiple));
+    formik.setFieldValue(name, arrayToggle(value, option.value, !multiple));
   };
-
-  console.log(options);
-  return "";
 
   return (
     <FormField>
@@ -53,11 +51,16 @@ const SelectInput = (props) => {
         className={`GrtFormSelect-${name}`}
         error={hasError(name)}
       >
-        {label && (
-          <FormLabel id={`${id}-label`} aria-label={ariaLabel}>
-            <Label name={name}>{label}</Label>
-          </FormLabel>
-        )}
+        <Label
+          id={`${id}-label`}
+          name={name}
+          htmlFor={`${id}-input`}
+          aria-label={ariaLabel}
+          component={"label"}
+          color={color}
+        >
+          {label}
+        </Label>
         <Select
           value={value}
           IconComponent={ExpandMoreRoundedIcon}

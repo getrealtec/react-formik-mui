@@ -62,7 +62,9 @@ const Radio = (props) => {
             <FormControlLabel
               key={option.value}
               value={option.value}
-              label={<Typography variant={"body1"}>{option.label}</Typography>}
+              label={
+                <Typography color={`${color}.main`}>{option.label}</Typography>
+              }
               control={
                 <MuiRadio
                   color={color}
